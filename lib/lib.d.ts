@@ -1370,6 +1370,13 @@ type Readonly<T> = {
 };
 
 /**
+ * Make all properties in T mutable
+ */
+type Mutable<T> = {
+    -readonly [P in keyof T]: T[P];
+};
+
+/**
  * From T pick a set of properties K
  */
 type Pick<T, K extends keyof T> = {
